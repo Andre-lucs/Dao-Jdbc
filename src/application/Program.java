@@ -21,10 +21,16 @@ public class Program {
 		List<Seller> list1 = selDao.findByDepartment(new Department(2,""));
 		
 		System.out.println("\n=== Sellers by Department ===");
-		for(int i = 0; i < list1.size(); i++) {
-			System.out.println(list1.get(i));
+		for(Seller s : list1) {
+			System.out.println(s);
 		}
 		
+		List<Seller> list2 = selDao.findAll();
+		
+		System.out.println("\n=== All Sellers ===");
+		for(Seller s : list2) {
+			System.out.println(s);
+		}
 	}
 
 }
