@@ -31,6 +31,19 @@ public class Program {
 		for(Seller s : list2) {
 			System.out.println(s);
 		}
+		
+		seller = new Seller();
+		seller.setName("Lucas");
+		seller.setEmail("lusca@gmai.com");
+		seller.setBirthDate(new java.util.Date());
+		seller.setBaseSalary(2500.0);
+		seller.setDepartment(new Department(3,""));
+		
+		selDao.insert(seller);
+		
+		System.out.println("=== Inserted new seller ===");
+		System.out.println(seller);
+		
 	}
 
 }
