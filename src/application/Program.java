@@ -3,14 +3,13 @@ package application;
 import java.util.List;
 
 import model.dao.DaoFactory;
-import model.dao.SellerDao;
+import model.dao.DepartmentDao;
 import model.entities.Department;
-import model.entities.Seller;
 
 public class Program {
 
 	public static void main(String[] args) {
-		
+		/*
 		SellerDao selDao = DaoFactory.createSellerDao();
 		
 		Seller seller = selDao.findById(2);
@@ -55,7 +54,15 @@ public class Program {
 		selDao.deleteById(list1.get(list1.size()-1).getId());
 		
 		System.out.println("\n=== Deleted seller ===");
-		System.out.println(list1.get(list1.size()-1));
+		System.out.println(list1.get(list1.size()-1));*/
+		
+		DepartmentDao depDao = DaoFactory.createDepartmentDao();
+		
+		List<Department> depList = depDao.findAll();
+		
+		for(Department d : depList) {
+			System.out.println(d);
+		}
 	}
 
 }
