@@ -41,9 +41,21 @@ public class Program {
 		
 		selDao.insert(seller);
 		
-		System.out.println("=== Inserted new seller ===");
+		System.out.println("\n=== Inserted new seller ===");
 		System.out.println(seller);
+
+		seller = selDao.findById(2);
+		seller.setBaseSalary(9000.0);
+		seller.setDepartment(new Department(3,null));
+		selDao.update(seller);
+		System.out.println("\n=== Updated seller ===");
+		System.out.println(seller);
+
 		
+		selDao.deleteById(list1.get(list1.size()-1).getId());
+		
+		System.out.println("\n=== Deleted seller ===");
+		System.out.println(list1.get(list1.size()-1));
 	}
 
 }
